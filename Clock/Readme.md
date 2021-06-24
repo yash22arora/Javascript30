@@ -1,6 +1,6 @@
-## Clock using JS
+# Clock using JS
 
 Analogue and Digital clocks along with date using simple Javascript.
 <br>
 <br>
-<img src="clock.png">
+<img src="clock.png" width="100%">
