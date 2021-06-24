@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+body
+{
+    background-color: rgb(33, 33, 33);
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.form
+{
+    color: rgb(232, 231, 231);
+    padding: 0;
+    margin-top: 30px;
+}
+.form label{
+    padding: 10px 20px;
+    font-size: 1.3rem;
+}
+
+.form input
+{
+    background-color: rgb(232, 231, 231);
+    border: none;
+    padding: 10px;
+    font: 500 16px 'Arial';
+    text-align: right;
+}
+
+.countdown
+{
+    
+    margin-top: 40px;
+    margin-bottom: 55px;
+    border-radius: 10px;
+    color: rgb(232, 231, 231);
+    display: flex;
+    flex-direction: row;
+    width: 80vw !important;
+    max-width: 600px;
+    justify-content: space-evenly;
+    text-align: center;
+    
+}
+
+img.team
+{
+    width: 80vw;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.block
+{
+    padding: 20px;
+}
+
+.block h2
+{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.block p
+{
+    font-size: 1.3rem;
+}
