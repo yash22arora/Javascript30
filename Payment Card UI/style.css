@@ -1,0 +1,103 @@
+@import url('https://fonts.cdnfonts.com/css/ocr-b-10-bt');
+@import url('https://fonts.cdnfonts.com/css/molengo');
+  
+
+body
+{
+    margin: 0;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3cpath d='M-190.42 315.71C2.09 313.06 260.66 84.08 544.65 86.11 828.64 88.14 767.87 530.54 912.19 589.07' stroke='rgba(235%2c 38%2c 37%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-90.88 397.68C62.05 396.74 201.79 256.75 504.6 257.68 807.41 258.61 926.57 604.64 1100.08 618.34' stroke='rgba(235%2c 38%2c 37%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-158.42 343.18C-44.96 343.39 65.77 413.18 289.97 413.18 514.16 413.18 507.61 341.61 738.36 343.18 969.11 344.75 1054.01 619.56 1186.75 631.66' stroke='rgba(235%2c 38%2c 37%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-25.69 162.75C98.82 171.14 162.81 394.97 408.42 409.15 654.02 423.33 721.36 620.03 842.52 625.95' stroke='rgba(235%2c 38%2c 37%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-202.52 281.07C-50.15 276.04 67.56 37.61 357.74 40.27 647.92 42.93 727.41 541.9 918 584.04' stroke='rgba(235%2c 38%2c 37%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper
+{
+    padding: 15vh 15vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card
+{
+    padding: 30px;
+    width: 500px;
+    height: 300px;
+    
+
+    font-family: 'OCR-B 10 BT', sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+
+    color: rgba(255, 255, 255, 0.651);
+    background: rgba( 31, 31, 31, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#cardNumber
+{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    
+}
+.infoCard
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: baseline;
+}
+
+.cardHolder input, .expiry input
+{
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'OCR-B 10 BT', sans-serif;
+    padding: 0;
+    display: inline !important;
+    width: min-content;
+}
+
+#cardExpiry
+{
+    text-align: right;
+    width: 100px;
+}
+
+.cardHolder input::placeholder, .expiry input::placeholder
+{
+    color: rgba(255, 255, 255, 0.651);
+}
+
+
+.expiry{
+    text-align: right;
+}
+.cardHolder label, .expiry label
+{
+    color: white;
+    font-size: 1rem;
+}
+
+.form
+{
+    
+    padding: 30px;
+    font-family: 'Molengo', sans-serif;
+    font-size: 1.5rem;
+                                                
+}
