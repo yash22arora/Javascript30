@@ -14,17 +14,17 @@
             <img src="visa.png" height="30px" id="visa">
             <img src="mastercard.png" id="mastercard" height="40px">
             <img src="chip.png" height="60px" id="chip">
-            <h4 id="cardNumber">XXXX XXXX XXXX XXXX</h4>
+            <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" disabled value="">
             <div class="infoCard">
                 <div class="cardHolder">
                     <label for="Card holder name">CARDHOLDER NAME</label>
                     <br>
-                    <input type="text" id="cardHolderName" disabled placeholder="Yashvardhan Arora" value=""></span>
+                    <input type="text" id="cardHolderName" disabled placeholder="Your Name" value="">
                 </div>
                 <div class="expiry">
                     <label for="Valid thru">VALID THRU</label>
                     <br>
-                    <input type="text" id="cardExpiry" disabled placeholder="06/24" value=""></span>
+                    <input type="text" id="cardExpiry" disabled placeholder="MM/YY" value="">
                     
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <h3>Payment Information :</h3>
             <form action="">
                 <label for="cardNumber">Card Number:</label>
-                <input type="text" id="cardNumberInput" value="" pattern="[0-9 ]{19}" maxlength="16">
+                <input type="text" id="cardNumberInput" value="" pattern="[0-9 ]{19}" maxlength="19">
 
                 <label for="cardHolderName">Card Holder's Name:</label>
                 <input type="text" id="cardHolderInput">
@@ -53,6 +53,6 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
 </body>
 </html>

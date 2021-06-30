@@ -1,3 +1,7 @@
+const visa = document.getElementById("visa");
+const mastercard = document.getElementById("mastercard");
+
+
 let cardNumberInput = document.getElementById("cardNumberInput");
 let cardNumber = document.getElementById("cardNumber");
 
@@ -11,12 +15,38 @@ submitBtn.addEventListener("click",function(e){
     e.preventDefault();
 });
 
+function showNetwork(integer)
+{
+    
+    if(integer==52)
+    {
+        
+            mastercard.style.visibility="hidden";
+            visa.style.visibility="visible";
+            console.log("Visa");
+        
+    }
+    if(integer==53)
+    {
+        if(mastercard.style.visibility=="hidden")
+        {
+            visa.style.visibility="hidden";
+            mastercard.style.visibility="visible";
+            console.log("Mastercard");
+        }
+    }
+}
+
 let cnumber = "";
 let i=0;
 cardNumberInput.addEventListener("keydown",function(e){
    
+    console.log(i);
     //adding - after every 4 digits
-    console.log(e.key);
+    if(i==0)
+    {
+        showNetwork(e.keyCode);
+    }
     
     if(!isNaN(e.key)||e.key=="Backspace")
     {
@@ -46,7 +76,7 @@ cardNumberInput.addEventListener("keydown",function(e){
     }
     
     //final updation:
-    cardNumber.innerText=cnumber;
+    cardNumber.value=cnumber;
     if(e.key!="Backspace")
     cardNumberInput.value=cnumber.slice(0, cnumber.length-1);
     else
@@ -56,14 +86,33 @@ cardNumberInput.addEventListener("keydown",function(e){
 });
 
 
-let cname=" ";
-cardHolderInput.addEventListener("keydown", function(s){
+let cname="";
+let cnameLength = 0;
+cardHolderInput.addEventListener("keydown", function(event){
 
-    if
+    if((event.keyCode>=65&&event.keyCode<=90)||event.keyCode==8||event.keyCode==32)
     {
-        cname
+        if(event.keyCode==8)
+        {
+            
+            cname=cardHolderInput.value;
+            cardHolder.value=cname;
+            
+            
+            
+        }
+        else
+        {
+            cname = cname + event.key;
+            cnameLength++;
+            cardHolder.value=cname;
+        }
+        
     }
-    cname = cname + s.key;
-    cardHolder.value=cname;
+    else
+    {
+        return;
+    }
+    
 
 });

@@ -52,9 +52,8 @@ body
     border-radius: 2px;
     position: absolute;
     right: 30px;
-    transition: 0.8s;
-    animation: linear 1s;
-    display: none;
+    visibility: hidden;
+    
 }
 #mastercard
 {
@@ -63,19 +62,32 @@ body
     border-radius: 2px;
     position: absolute;
     right: 30px;
-    transition: 0.8s;
-    animation: linear 1s;
+    visibility: hidden;
+   
 }
 
 #chip
 {
     margin-top: 40px;
 }
+
 #cardNumber
 {
     margin-top: 50px;
     margin-bottom: 50px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    font-family: 'OCR-B 10 BT', sans-serif;
+    padding: 0;
+    display: block;
     
+}
+#cardNumber::placeholder
+{
+    color: rgba(255, 255, 255, 0.651);
 }
 .infoCard
 {
