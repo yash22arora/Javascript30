@@ -13,7 +13,7 @@
         <div class="card">
             <img src="visa.png" height="30px" id="visa">
             <img src="mastercard.png" id="mastercard" height="40px">
-            <img src="chip.png" height="50px" id="chip">
+            <img src="chip.png" height="60px" id="chip">
             <h4 id="cardNumber">XXXX XXXX XXXX XXXX</h4>
             <div class="infoCard">
                 <div class="cardHolder">
@@ -34,7 +34,7 @@
             <h3>Payment Information :</h3>
             <form action="">
                 <label for="cardNumber">Card Number:</label>
-                <input type="text" id="cardNumberInput" value="" pattern="[0-9 ]{19}" maxlength="19">
+                <input type="text" id="cardNumberInput" value="" pattern="[0-9 ]{19}" maxlength="16">
 
                 <label for="cardHolderName">Card Holder's Name:</label>
                 <input type="text" id="cardHolderInput">
@@ -47,7 +47,7 @@
                     <input type="password" maxlength="3" id="cvvInput">
                 </div>
 
-                <button type="submit">Proceed</button>
+                <button type="submit" id="submit">Proceed</button>
 
             </form>
         </div>
