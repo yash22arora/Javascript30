@@ -52,7 +52,7 @@ body
     border-radius: 2px;
     position: absolute;
     right: 30px;
-    visibility: hidden;
+    
     
 }
 #mastercard
@@ -62,7 +62,7 @@ body
     border-radius: 2px;
     position: absolute;
     right: 30px;
-    visibility: hidden;
+    
    
 }
 
@@ -178,14 +178,26 @@ input[type=number] {
 {
     outline: none;
 }
-.half
+
+.lower
 {
-    width: 40%;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
-.lhalf
+.part
 {
-    margin-right: 18%;
+    padding-left: 35px;
+}
+.part1
+{
+    padding: 0 5px;
+    
+}
+.lower span
+{
+    align-self: flex-end;
 }
 
 .form button

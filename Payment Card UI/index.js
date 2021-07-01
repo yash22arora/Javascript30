@@ -1,13 +1,14 @@
-const visa = document.getElementById("visa");
-const mastercard = document.getElementById("mastercard");
-
-
 let cardNumberInput = document.getElementById("cardNumberInput");
 let cardNumber = document.getElementById("cardNumber");
+
+$("#visa").fadeOut(1);
+$("#mastercard").fadeOut(1);
 
 let cardHolderInput = document.getElementById("cardHolderInput");
 let cardHolder = document.getElementById("cardHolderName");
 
+cardNumberInput.addEventListener('input', updateNumber);
+cardHolderInput.addEventListener('input', updateName);
 
 const submitBtn = document.getElementById("submit");
 
@@ -15,58 +16,34 @@ submitBtn.addEventListener("click",function(e){
     e.preventDefault();
 });
 
-function showNetwork(integer)
-{
-    
-    if(integer==52)
-    {
-        
-            mastercard.style.visibility="hidden";
-            visa.style.visibility="visible";
-            console.log("Visa");
-        
-    }
-    if(integer==53)
-    {
-        if(mastercard.style.visibility=="hidden")
-        {
-            visa.style.visibility="hidden";
-            mastercard.style.visibility="visible";
-            console.log("Mastercard");
-        }
-    }
-}
-
-let cnumber = "";
 let i=0;
-cardNumberInput.addEventListener("keydown",function(e){
-   
-    console.log(i);
-    //adding - after every 4 digits
-    if(i==0)
+let cnumber="";
+function updateNumber(e) {
+
+    if(!isNaN(e.data)||e.data==null)
     {
-        showNetwork(e.keyCode);
-    }
-    
-    if(!isNaN(e.key)||e.key=="Backspace")
-    {
-        if(i%4==0&&i!=0)
+        
+        cnumber=cardNumberInput.value;
+        let length=cnumber.length;
+        if(length==4||length==9||length==14)
         {
-            cnumber=cnumber + "-";
+            cnumber=cnumber+' ';
+        }
+
+        cardNumberInput.value=cnumber;
+        cardNumber.value = cardNumberInput.value;
+        
+
+        console.log(cnumber.length);
+        
+        if(length==1)
+            showNetwork(cnumber);
+        if(length==0)
+        {
+            $("#visa").fadeOut(1);
+            $("#mastercard").fadeOut(1);
         }
         
-        if((e.key>-1&&e.key<10))
-        {
-            cnumber=cnumber+ e.key;
-            i++;
-        }
-        else if(e.key=="Backspace")
-        {
-            if(i>0)
-            --i;
-            cnumber=cnumber.slice(0, cnumber.length-1);
-            
-        }
     }
     else
     {
@@ -74,45 +51,27 @@ cardNumberInput.addEventListener("keydown",function(e){
         cardNumberInput.value=cnumber;
         return;
     }
-    
-    //final updation:
-    cardNumber.value=cnumber;
-    if(e.key!="Backspace")
-    cardNumberInput.value=cnumber.slice(0, cnumber.length-1);
-    else
-    cardNumberInput.value=cnumber.slice(0, cnumber.length);
 
     
-});
+}
 
+function updateName(e)
+{
+    cardHolder.value=e.target.value;
+}
 
-let cname="";
-let cnameLength = 0;
-cardHolderInput.addEventListener("keydown", function(event){
-
-    if((event.keyCode>=65&&event.keyCode<=90)||event.keyCode==8||event.keyCode==32)
+function showNetwork(integer)
+{
+    
+    if(integer==4)
     {
-        if(event.keyCode==8)
-        {
-            
-            cname=cardHolderInput.value;
-            cardHolder.value=cname;
-            
-            
-            
-        }
-        else
-        {
-            cname = cname + event.key;
-            cnameLength++;
-            cardHolder.value=cname;
-        }
+        $("#mastercard").fadeOut(200, "swing");
+        $("#visa").fadeIn(400, "swing");
         
     }
-    else
+    if(integer==5)
     {
-        return;
+        $("#visa").fadeOut(200, "swing");
+        $("#mastercard").fadeIn(400, "swing");
     }
-    
-
-});
+}
